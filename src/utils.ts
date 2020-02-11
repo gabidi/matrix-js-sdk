@@ -20,7 +20,7 @@ limitations under the License.
  * @module utils
  */
 
-import unhomoglyph from 'unhomoglyph';
+// import unhomoglyph from 'unhomoglyph';
 
 /**
  * Encode a dictionary of query parameters.
@@ -655,7 +655,8 @@ export function isNumber(value: any): boolean {
  * @return {string} a string with the hidden characters removed
  */
 export function removeHiddenChars(str: string): string {
-    return unhomoglyph(str.normalize('NFD').replace(removeHiddenCharsRegex, ''));
+    // return homoglyph(str.normalize('NFD').replace(removeHiddenCharsRegex, ''));
+    return str.normalize('NFD').replace(removeHiddenCharsRegex, '');
 }
 
 // Regex matching bunch of unicode control characters and otherwise misleading/invisible characters.
